@@ -21,10 +21,30 @@ var lengthPasswordNumber = parseInt(lengthPassword)
     alert("Please select between 8 - 128 characters")
     return"Try again"
   }
+  
+  var uppercaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var lowercaseOptions = "abcdefghijklmnopqrstuvwxyz"
+  var numbersOptions = "12345678910"
+  var specialOptions = "*&$£@"
+
+  var passwordtoReturn = ""
+  var passwordCharacterOptions = ""
+  
+  if (uppercaseCharacters === true) {
+    var randomUpperCharacter = uppercaseOptions[Math.floor(Math.random() * 26)]; 
+    passwordtoReturn += randomUpperCharacter
   }
 
+  if (lowercaseCharacters === true) {
+    var randomLowerCharacter = lowercaseOptions[Math.floor(Math.random() * 26)]; 
+    passwordtoReturn += randomLowerCharacter
+  }
+  return passwordtoReturn
 
+  }
   
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();

@@ -33,12 +33,22 @@ var lengthPasswordNumber = parseInt(lengthPassword)
   if (uppercaseCharacters === true) {
     var randomUpperCharacter = uppercaseOptions[Math.floor(Math.random() * 26)]; 
     passwordtoReturn += randomUpperCharacter
+    passwordCharacterOptions += uppercaseOptions;
   }
 
   if (lowercaseCharacters === true) {
     var randomLowerCharacter = lowercaseOptions[Math.floor(Math.random() * 26)]; 
     passwordtoReturn += randomLowerCharacter
+    passwordCharacterOptions += lowercaseOptions
   }
+
+  while (passwordtoReturn.length < lengthPasswordNumber){
+    var randomCharacter = passwordCharacterOptions[Math.floor(Math.random() * passwordCharacterOptions.length)]; 
+    passwordtoReturn += randomCharacter
+  }
+
+
+
   return passwordtoReturn
 
   }
